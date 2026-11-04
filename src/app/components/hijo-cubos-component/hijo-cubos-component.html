@@ -1,0 +1,22 @@
+<article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+  <img
+    [src]="cubo.imagen"
+    [alt]="cubo.nombre"
+    class="h-56 w-full bg-slate-50 object-contain p-4"
+  />
+  <div class="p-5">
+    <p class="text-sm font-medium text-indigo-600">{{ cubo.marca }}</p>
+    <h2 class="mt-1 text-lg font-semibold text-slate-900">{{ cubo.nombre }}</h2>
+    <p class="mt-1 text-sm text-slate-500">{{ cubo.modelo }}</p>
+    <div class="mt-5 flex items-center justify-between gap-4">
+      <p class="text-xl font-bold text-slate-900">{{ cubo.precio }} €</p>
+      <button
+        type="button"
+        class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        (click)="mostrarFavorito()"
+      >
+        Favorito
+      </button>
+    </div>
+  </div>
+</article>
