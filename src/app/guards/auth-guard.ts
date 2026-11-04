@@ -1,5 +1,18 @@
-import { CanActivateFn } from '@angular/router';
-
-export const authGuard: CanActivateFn = (route, state) => {
-  return true;
-};
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, MaybeAsync, GuardResult } from '@angular/router';
+@Injectable()
+export class AuthGuard implements CanActivate {
+  constructor(private _router: Router){}
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): MaybeAsync<GuardResult> {
+    if (sessionStorage.getItem("token")){
+      return true;
+    }else{
+      return this._router.createUrlTree(['/login'],
+        {queryParams: {returnUrl: state.url}}
+      )
+    }
+  }
+}

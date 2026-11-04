@@ -1,5 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
 import { ServiceCubos } from '../../services/service.cubos';
+import { ServiceAuthLogin } from '../../services/service.auth.login';
 
 @Component({
   selector: 'app-menu-component',
@@ -8,12 +9,20 @@ import { ServiceCubos } from '../../services/service.cubos';
   templateUrl: './menu-component.html',
 })
 export class MenuComponent implements OnInit {
+  private _serviceAuthLogin: ServiceAuthLogin = inject(ServiceAuthLogin);
+
   public marcas!: string[];
+  public user = this._serviceAuthLogin.user;
 
   constructor(
     private _cdr: ChangeDetectorRef,
-    private _serviceCubos: ServiceCubos
+    private _serviceCubos: ServiceCubos,
   ) {}
+
+  async logOutAsync(): Promise<void> {
+    await this._serviceAuthLogin.logoutAuthAsync();
+    this._cdr.detectChanges();
+  }
 
   async ngOnInit(): Promise<void> {
     this.marcas = await this._serviceCubos.getMarcas();

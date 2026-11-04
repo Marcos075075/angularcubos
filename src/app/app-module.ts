@@ -6,9 +6,14 @@ import { MenuComponent } from './components/menu-component/menu-component';
 import { HomeComponent } from './components/home-component/home-component';
 import { LoginComponent } from './components/login-component/login-component';
 import { MarcasComponent } from './components/marcas-component/marcas-component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { ServiceCubos } from './services/service.cubos';
 import { HijoCubosComponent } from './components/hijo-cubos-component/hijo-cubos-component';
+import { ServiceLogin } from './services/service.login';
+import { ServiceAuthLogin } from './services/service.auth.login';
+import { FormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth-guard';
+import { authTokenInterceptor } from './interceptors/auth-token-interceptor-interceptor';
 
 @NgModule({
   declarations: [
@@ -19,8 +24,15 @@ import { HijoCubosComponent } from './components/hijo-cubos-component/hijo-cubos
     MarcasComponent,
     HijoCubosComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServiceCubos],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient(withInterceptors([authTokenInterceptor])),
+    ServiceCubos,
+    ServiceLogin,
+    ServiceAuthLogin,
+    AuthGuard
+  ],
   bootstrap: [App],
 })
 export class AppModule {}
