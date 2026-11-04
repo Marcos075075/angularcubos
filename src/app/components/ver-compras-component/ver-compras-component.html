@@ -1,0 +1,30 @@
+<main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+  <div class="mb-8">
+    <p class="text-sm font-medium uppercase tracking-wide text-indigo-600">Historial</p>
+    <h1 class="mt-1 text-3xl font-bold text-slate-900">Tus compras realizadas</h1>
+    <p class="mt-2 text-slate-500">Consulta los cubos que has comprado.</p>
+  </div>
+
+  <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[520px] text-left text-sm text-slate-600">
+        <thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+          <tr>
+            <th scope="col" class="px-6 py-4 font-semibold">IdCubo</th>
+            <th scope="col" class="px-6 py-4 font-semibold">IdPedido</th>
+            <th scope="col" class="px-6 py-4 font-semibold">Fecha</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          @for (com of compras; track com) {
+            <tr class="transition hover:bg-slate-50">
+              <td class="whitespace-nowrap px-6 py-4 font-medium text-slate-900">{{ com.idCubo }}</td>
+              <td class="whitespace-nowrap px-6 py-4">{{ com.idPedido }}</td>
+              <td class="whitespace-nowrap px-6 py-4">{{ com.fechaPedido }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

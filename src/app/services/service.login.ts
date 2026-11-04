@@ -38,7 +38,7 @@ export class ServiceLogin {
     }
 
     async insterCompraAsync(id: number): Promise<any> {
-        let request = "/api/compra/insertcompra/" + id;
+        let request = "/api/compra/insertarpedido/" + id;
         return firstValueFrom(this._http.post(this.url + request, null));
     }
 

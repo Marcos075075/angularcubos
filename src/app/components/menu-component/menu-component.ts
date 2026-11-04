@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
 import { ServiceCubos } from '../../services/service.cubos';
 import { ServiceAuthLogin } from '../../services/service.auth.login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-component',
@@ -17,10 +18,12 @@ export class MenuComponent implements OnInit {
   constructor(
     private _cdr: ChangeDetectorRef,
     private _serviceCubos: ServiceCubos,
+    private _router: Router
   ) {}
 
   async logOutAsync(): Promise<void> {
     await this._serviceAuthLogin.logoutAuthAsync();
+    this._router.navigate(['/login']);
     this._cdr.detectChanges();
   }
 

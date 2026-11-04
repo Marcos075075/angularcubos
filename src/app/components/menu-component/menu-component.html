@@ -5,8 +5,8 @@
     </a>
 
     <ul class="flex items-center gap-8">
-      
-      <li>{{user()}}</li>
+      <li>{{ user()?.email }}</li>
+
       <li>
         <a
           [routerLink]="['/']"
@@ -40,15 +40,35 @@
       </li>
       <li>
         <a
+          [routerLink]="['/compras']"
+          class="text-sm font-medium text-slate-600 transition hover:text-indigo-600"
+        >
+          Compras
+        </a>
+      </li>
+
+      <li>
+        <a
+          [routerLink]="['/comprar']"
+          class="text-sm font-medium text-slate-600 transition hover:text-indigo-600"
+        >
+          Comprar Cubos
+        </a>
+      </li>
+
+      <li>
+        <a
           [routerLink]="['/login']"
           class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700"
         >
           Iniciar sesión
         </a>
       </li>
+
       <li>
         <button
           (click)="logOutAsync()"
+          type="button"
           class="rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700"
         >
           Cerrar sesión

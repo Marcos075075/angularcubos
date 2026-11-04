@@ -14,6 +14,9 @@ import { ServiceAuthLogin } from './services/service.auth.login';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth-guard';
 import { authTokenInterceptor } from './interceptors/auth-token-interceptor-interceptor';
+import { PerfilComponent } from './components/perfil-component/perfil-component';
+import { VerComprasComponent } from './components/ver-compras-component/ver-compras-component';
+import { ComprarComponent } from './components/comprar-component/comprar-component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { authTokenInterceptor } from './interceptors/auth-token-interceptor-inte
     LoginComponent,
     MarcasComponent,
     HijoCubosComponent,
+    PerfilComponent,
+    VerComprasComponent,
+    ComprarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
@@ -31,7 +37,7 @@ import { authTokenInterceptor } from './interceptors/auth-token-interceptor-inte
     ServiceCubos,
     ServiceLogin,
     ServiceAuthLogin,
-    AuthGuard
+    AuthGuard,
   ],
   bootstrap: [App],
 })
