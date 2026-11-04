@@ -18,6 +18,9 @@ import { PerfilComponent } from './components/perfil-component/perfil-component'
 import { VerComprasComponent } from './components/ver-compras-component/ver-compras-component';
 import { ComprarComponent } from './components/comprar-component/comprar-component';
 import { RegistroComponent } from './components/registro-component/registro-component';
+import { provideToastService } from 'ngx-yet-another-toast-library';
+import { ErrorComponent } from './error-component/error-component';
+import { errorInterceptor } from './interceptors/error-interceptor-interceptor';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,15 @@ import { RegistroComponent } from './components/registro-component/registro-comp
     VerComprasComponent,
     ComprarComponent,
     RegistroComponent,
+    ErrorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([authTokenInterceptor])),
+    provideHttpClient(withInterceptors([authTokenInterceptor, errorInterceptor])),
+    provideToastService(),
     ServiceCubos,
     ServiceLogin,
-    ServiceAuthLogin,
     AuthGuard,
   ],
   bootstrap: [App],
