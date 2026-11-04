@@ -1,0 +1,57 @@
+<main class="flex min-h-[calc(100vh-73px)] items-center justify-center bg-slate-50 px-4 py-12">
+  <section class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold text-slate-900">Crear una cuenta</h1>
+      <p class="mt-2 text-sm text-slate-500">Regístrate en AngularCubos</p>
+    </div>
+
+    <form #registroForm="ngForm" class="space-y-5">
+      <div>
+        <label for="cajanombre" class="mb-2 block text-sm font-medium text-slate-700">Usuario</label>
+        <input
+          id="cajanombre"
+          type="text"
+          name="cajanombre"
+          #cajanombre
+          required
+          class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+          placeholder="Introduce tu usuario"
+        />
+      </div>
+
+      <div>
+        <label for="cajaemail" class="mb-2 block text-sm font-medium text-slate-700">Email</label>
+        <input
+          id="cajaemail"
+          type="email"
+          name="cajaemail"
+          #cajaemail
+          required
+          class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+          placeholder="Introduce tu email"
+        />
+      </div>
+
+      <div>
+        <label for="cajapass" class="mb-2 block text-sm font-medium text-slate-700">Contraseña</label>
+        <input
+          id="cajapass"
+          type="password"
+          name="cajapass"
+          #cajapass
+          required
+          class="w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+          placeholder="Introduce tu contraseña"
+        />
+      </div>
+
+      <button
+        type="submit"
+        (click)="registroAsync()"
+        class="w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >
+        Registrarse
+      </button>
+    </form>
+  </section>
+</main>

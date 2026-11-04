@@ -5,6 +5,14 @@
     <p class="mt-2 text-slate-500">Consulta los cubos que has comprado.</p>
   </div>
 
+  <button
+    type="button"
+    (click)="generarPDF()"
+    class="mt-6 inline-flex items-center rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 active:scale-[0.98]"
+  >
+    Generar PDF de las compras
+  </button>
+
   <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
     <div class="overflow-x-auto">
       <table class="w-full min-w-[520px] text-left text-sm text-slate-600">

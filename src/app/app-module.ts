@@ -17,6 +17,7 @@ import { authTokenInterceptor } from './interceptors/auth-token-interceptor-inte
 import { PerfilComponent } from './components/perfil-component/perfil-component';
 import { VerComprasComponent } from './components/ver-compras-component/ver-compras-component';
 import { ComprarComponent } from './components/comprar-component/comprar-component';
+import { RegistroComponent } from './components/registro-component/registro-component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ComprarComponent } from './components/comprar-component/comprar-compone
     PerfilComponent,
     VerComprasComponent,
     ComprarComponent,
+    RegistroComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [

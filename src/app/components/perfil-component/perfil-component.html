@@ -1,1 +1,26 @@
-<p>perfil-component works!</p>
+<main class="flex min-h-[calc(100vh-73px)] items-center justify-center bg-slate-50 px-4 py-12">
+  <section class="w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div class="bg-indigo-600 px-8 py-8 text-white">
+      <div class="flex h-16 w-16 items-center justify-center rounded-full bg-white text-2xl font-bold text-indigo-600">
+        {{ user.nombre.charAt(0).toUpperCase() }}
+      </div>
+      <h1 class="mt-4 text-3xl font-bold">Mi perfil</h1>
+      <p class="mt-1 text-indigo-100">Información de tu cuenta</p>
+    </div>
+
+    <dl class="divide-y divide-slate-100 px-8">
+      <div class="flex items-center justify-between gap-4 py-5">
+        <dt class="text-sm font-medium text-slate-500">Nombre</dt>
+        <dd class="text-right font-semibold text-slate-900">{{ user.nombre }}</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 py-5">
+        <dt class="text-sm font-medium text-slate-500">Email</dt>
+        <dd class="text-right font-semibold text-slate-900">{{ user.email }}</dd>
+      </div>
+      <div class="flex items-center justify-between gap-4 py-5">
+        <dt class="text-sm font-medium text-slate-500">ID de usuario</dt>
+        <dd class="text-right font-semibold text-slate-900">{{ user.idUsuario }}</dd>
+      </div>
+    </dl>
+  </section>
+</main>
