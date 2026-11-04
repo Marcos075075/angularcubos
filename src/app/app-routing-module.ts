@@ -8,7 +8,7 @@ import { AuthGuard } from './guards/auth-guard';
 import { ComprarComponent } from './components/comprar-component/comprar-component';
 import { PerfilComponent } from './components/perfil-component/perfil-component';
 import { RegistroComponent } from './components/registro-component/registro-component';
-import { ErrorComponent } from './error-component/error-component';
+import { ErrorComponent } from './components/error-component/error-component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

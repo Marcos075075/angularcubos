@@ -19,8 +19,8 @@ import { VerComprasComponent } from './components/ver-compras-component/ver-comp
 import { ComprarComponent } from './components/comprar-component/comprar-component';
 import { RegistroComponent } from './components/registro-component/registro-component';
 import { provideToastService } from 'ngx-yet-another-toast-library';
-import { ErrorComponent } from './error-component/error-component';
 import { errorInterceptor } from './interceptors/error-interceptor-interceptor';
+import { ErrorComponent } from './components/error-component/error-component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { errorInterceptor } from './interceptors/error-interceptor-interceptor';
     VerComprasComponent,
     ComprarComponent,
     RegistroComponent,
-    ErrorComponent,
+    ErrorComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
